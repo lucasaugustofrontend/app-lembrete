@@ -5,6 +5,7 @@ const jshint = require('gulp-jshint')
 const stylish = require('jshint-stylish')
 const sourcemap = require('gulp-sourcemaps')
 const babel = require('gulp-babel')
+const cssmin = require('gulp-clean-css')
 
 const path = {
   babel: ['assets/babel/**/*.js'],
@@ -30,6 +31,7 @@ gulp.task('server', () => {
   gulp.watch([path.babel], ['babel', reload])
   gulp.watch([path.js], ['lint-js', reload])
   gulp.watch([path.sass], ['sass', reload])
+  gulp.watch([path.css], ['cssmin', reload])
 })
 
 gulp.task('babel', () => {
@@ -45,6 +47,13 @@ gulp.task('sass', () => {
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('assets/stylesheets'))
+})
+gulp.task('cssmin', () => {
+  return gulp.src(path.css)
+    .pipe(sourcemap.init())
+    .pipe(cssmin({compatibility: 'ie8'}))
+    .pipe(sourcemap.write('.'))
+    .pipe(gulp.dest('.'))
 })
 
 gulp.task('lint-js', () => {
