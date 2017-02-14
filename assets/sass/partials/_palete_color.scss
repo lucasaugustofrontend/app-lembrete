@@ -1,5 +1,5 @@
 @function colors($color, $type:base) {
-  $colors: (
+  $colors:(
     bg: (
       base: #2BC1FF,
       primary: #FF4F48,
@@ -12,6 +12,6 @@
       dark: #000
     )
   );
-  $returnMap: map-get($colors, $colors);
+  $returnMap: map-get($colors, $color);
   @return map-get($returnMap, $type);
 }
