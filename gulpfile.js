@@ -26,9 +26,10 @@ gulp.task('server', () => {
     ghostMode: true
   })
 
-  gulp.watch(['./.html', '!./node_modules'], reload)
+  gulp.watch(['index.html', path.css], reload)
   gulp.watch([path.babel], ['babel', reload])
   gulp.watch([path.js], ['lint-js', reload])
+  gulp.watch([path.sass], ['sass', reload])
 })
 
 gulp.task('babel', () => {

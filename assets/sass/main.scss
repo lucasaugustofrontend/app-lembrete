@@ -1,0 +1,15 @@
+@import 'partials/variables',
+        'partials/palete_color',
+        'partials/minixs',
+        'partials/reset',
+        'partials/grid';
+
+* {
+  box-sizing: border-box;
+  &::after, &::before {
+    box-sizing: border-box;
+    content: '';
+    clear: both;
+    display: block;
+  }
+}
