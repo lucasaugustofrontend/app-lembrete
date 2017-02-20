@@ -27,7 +27,7 @@ a {
       }
   }
   &_options {
-    &_display, &_help {
+    .header_button {
       background: darken(colors(bg, base), 20%);
       border: {
         radius: .3rem;
@@ -37,9 +37,23 @@ a {
         size: 1.5rem;
       }
       line-height: 1.5;
+      width: 100%;
     }
     &_help {
       margin: {
+        left: .5rem;
+      }
+    }
+  }
+  &_search {
+    padding: {
+      top: .2rem;
+    }
+    input {
+      @include border(transparent, solid, .01rem, .3rem);
+      height: 2rem;
+      width: 100%;
+      padding: {
         left: .5rem;
       }
     }
