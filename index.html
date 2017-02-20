@@ -8,7 +8,97 @@
   <link rel="stylesheet" href="assets/stylesheets/main.css">
 </head>
 <body>
+	<div class="container-fluid">
+		<header class="header row">
+			<div class="col-lg-9">
+				<h1 class="header_title">App lembrete</h1>
+			</div>
+			<div class="header_options col-lg-3 row">
+				<div class="col-lg-3 header_options_display center-lg">Linhas</div>
+				<div class="col-lg-2 header_options_help center-lg">?</div>
+			</div>
+		</header>
+		<section class="newCards row">
+				<form action="" class="newCard col-lg-12">
+					<div class="col-lg-6 col-lg-offset-3">
+						<textarea name="newCard_content" cols="50" rows="10" class="newCard_content" placeholder="Digite aqui seu lembrete"></textarea>
+					</div>
+					<div class="col-lg-6 col-lg-offset-3">
+						<button type="submit" class="newCard_salve">Salvar</button>
+					</div>
+				</form>
+			</section>
+		<main class="container">
+			<section>
+				<ol class="wrap_card row">
+					<li class="col-lg-3" data-color="firstColor">
+						<nav class="wrap_card_option">
+							<ul>
+								<li class="card_options card_delete card_setting"><a href="#">excluir</a></li>
+								<li class="card_options card_edit card_setting"><a href="#">editar</a></li>
+								<li class="card_options isActive" data-color="firstColor"><a href="#">azul</a></li>
+								<li class="card_options" data-color="secondColor"><a href="#">carmesim</a></li>
+								<li class="card_options" data-color="thirdColor"><a href="#">violeta</a></li>
+								<li class="card_options" data-color="fourthColor"><a href="#">verde</a></li>
+							</ul>
+						</nav>
+						<p class="card_content" contenteditable="false">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus culpa sunt inventore nihil repellat ipsum, magnam delectus fugit enim maiores minima deleniti veritatis dignissimos consequuntur tempora dolorum, asperiores veniam, tempore.
+						</p>
+					</li>
+					<li class="col-lg-3" data-color="secondColor">
+						<nav class="wrap_card_option">
+							<ul>
+								<li class="card_options card_delete card_setting"><a href="#">excluir</a></li>
+								<li class="card_options card_edit card_setting"><a href="#">editar</a></li>
+								<li class="card_options" data-color="firstColor"><a href="#">azul</a></li>
+								<li class="card_options isActive" data-color="secondColor"><a href="#">carmesim</a></li>
+								<li class="card_options" data-color="thirdColor"><a href="#">violeta</a></li>
+								<li class="card_options" data-color="fourthColor"><a href="#">verde</a></li>
+							</ul>
+						</nav>
+						<p class="card_content" contenteditable="false">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus culpa sunt inventore nihil repellat ipsum, magnam delectus fugit enim maiores minima deleniti veritatis dignissimos consequuntur tempora dolorum, asperiores veniam, tempore.
+						</p>
+					</li>
+					<li class="col-lg-3" data-color="thirdColor">
+						<nav class="wrap_card_option">
+							<ul>
+								<li class="card_options card_delete card_setting"><a href="#">excluir</a></li>
+								<li class="card_options card_edit card_setting"><a href="#">editar</a></li>
+								<li class="card_options" data-color="firstColor"><a href="#">azul</a></li>
+								<li class="card_options" data-color="secondColor"><a href="#">carmesim</a></li>
+								<li class="card_options isActive" data-color="thirdColor"><a href="#">violeta</a></li>
+								<li class="card_options" data-color="fourthColor"><a href="#">verde</a></li>
+							</ul>
+						</nav>
+						<p class="card_content" contenteditable="false">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus culpa sunt inventore nihil repellat ipsum, magnam delectus fugit enim maiores minima deleniti veritatis dignissimos consequuntur tempora dolorum, asperiores veniam, tempore.
+						</p>
+					</li>
+					<li class="col-lg-3" data-color="fourthColor">
+						<nav class="wrap_card_option">
+							<ul>
+								<li class="card_options card_delete card_setting"><a href="#">excluir</a></li>
+								<li class="card_options card_edit card_setting"><a href="#">editar</a></li>
+								<li class="card_options" data-color="firstColor"><a href="#">azul</a></li>
+								<li class="card_options" data-color="secondColor"><a href="#">carmesim</a></li>
+								<li class="card_options" data-color="thirdColor"><a href="#">violeta</a></li>
+								<li class="card_options isActive" data-color="fourthColor"><a href="#">verde</a></li>
+							</ul>
+						</nav>
+						<p class="card_content" contenteditable="false">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus culpa sunt inventore nihil repellat ipsum, magnam delectus fugit enim maiores minima deleniti veritatis dignissimos consequuntur tempora dolorum, asperiores veniam, tempore.
+						</p>
+					</li>
+				</ol>
+			</section>
+		</main>
 
+		<footer class="footer center-xs">
+			&copy; Lucas Augusto
+		</footer>
+	</div>
 
 <script src="assets/lib/handlebars-v4.0.5.js"></script>
 <script src="assets/javascripts/main.js"></script>

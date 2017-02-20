@@ -1,11 +1,10 @@
 @function colors($color, $type:base) {
   $colors:(
     bg: (
-      base: #2BC1FF,
-      primary: #FF4F48,
-      second: #761CE8,
-      third: #1CE82F,
-      four: #FFE61E
+      base: #00BFFF, // azul céu
+      primary: #DC143C, // carmesim
+      second: #8A2BE2, // azul violeta
+      third: #7CFC00 //  verde grama
     ),
     text: (
       base: #fff,

@@ -1,15 +1,165 @@
 @import 'partials/variables',
         'partials/palete_color',
-        'partials/minixs',
+        'partials/mixins',
         'partials/reset',
         'partials/grid';
 
 * {
   box-sizing: border-box;
   &::after, &::before {
-    box-sizing: border-box;
+    @include clearfix(block, visibility);
     content: '';
-    clear: both;
+  }
+}
+
+a {
+  cursor: pointer;
+}
+
+.header {
+  background: colors(bg, base);
+  padding: 1rem 0;
+  &_title {
+      color: lighten(colors(bg, primary), 10%);
+      text: {
+        transform: uppercase;
+      }
+  }
+  &_options {
+    &_display, &_help {
+      background: darken(colors(bg, base), 20%);
+      border: {
+        radius: .3rem;
+      }
+      color: colors(text, base);
+      font: {
+        size: 1.5rem;
+      }
+      line-height: 1.5;
+    }
+    &_help {
+      margin: {
+        left: .5rem;
+      }
+    }
+  }
+}
+
+.newCards {
+  background: lighten(colors(text, dark), 95%);
+  padding: {
+    bottom: .5rem;
+    top: .5rem;
+  }
+}
+
+.newCard {
+  &_content {
+    border: {
+      radius: .3rem;
+    }
+    color: lighten(colors(text, dark), 30%);
     display: block;
+    height: 2.5rem;
+    margin: 0 auto;
+    padding: .3rem;
+    width: 70%;
+    transition: all .2s ease-in-out;
+    &:focus { 
+      @include boxShadow(10px, 2px, lighten(colors(bg, base), 20%), 0);
+      height: 7rem;
+    }
+  }
+  &_salve {
+    background: colors(bg, second);
+    @include border(transparent, solid, .01rem, .3rem);
+    color: colors(text, base);
+    font: {
+      size: 1.5rem;
+    }
+    display: block;
+    height: 3rem;
+    @include space(.5rem, .5rem);
+    text: {
+      transform: uppercase;
+    }
+    width: 15%;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  ol, ul {
+    list: {
+      style: none;
+    }
+  }
+  .wrap_card {
+    position: relative;
+    &_option {
+      position: absolute;
+      @include space(-1rem, 0, 0);
+      opacity: 0;
+      transition: all .5s ease-in-out;
+    }
+    &:hover {
+      .wrap_card_option {
+        opacity: 1;
+      }
+    }
+  }
+  .card_options {
+    @include background(center, 60%, no-repeat);
+    @include border(rgba(0,0,0,.7), solid, .1rem, 50%);
+    @extend %textHidden;
+      a {
+        color: transparent;
+      }
+      &.isActive {
+        border: {
+          width: .2rem;
+        }
+      }
+    }
+    
+}
+
+[data-color="firstColor"] {
+  background: colors(bg, base);
+}
+[data-color="secondColor"] {
+  background: colors(bg, primary);
+}
+[data-color="thirdColor"] {
+  background: colors(bg, second);
+}
+[data-color="fourthColor"] {
+  background: colors(bg, third);
+}
+.card {
+  &_delete, &_edit {
+    background: lighten(colors(text, dark), 90%);
+  }
+  &_delete{
+    background-image: url('../images/delete.svg');
+    margin: {
+      right: 1.3rem;
+    }
+  }
+  &_edit {
+    background-image: url('../images/edit.svg');
+  }
+}
+
+.footer {
+  background: colors(bg, base);
+  color: colors(text, base);
+  font: {
+    size: 2rem;
+  }
+  margin-top: 45.25vh;
+  padding: 3rem;
+  text: {
+    transform: uppercase;
   }
 }

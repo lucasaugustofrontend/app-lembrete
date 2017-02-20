@@ -10,6 +10,7 @@ const cssmin = require('gulp-clean-css')
 const path = {
   babel: ['assets/babel/**/*.js'],
   css: ['assets/stylesheets/**/*.css'],
+  img: ['assets/images/**/*'],
   js: ['assets/javascripts/**/*.js'],
   sass: ['assets/sass/**/*.scss']
 }
@@ -27,10 +28,10 @@ gulp.task('server', () => {
     ghostMode: true
   })
 
-  gulp.watch(['index.html', path.css], reload)
-  gulp.watch([path.babel], ['babel', reload])
-  gulp.watch([path.js], ['lint-js', reload])
-  gulp.watch([path.sass], ['sass', reload])
+  gulp.watch(['index.html', path.css, path.js], reload)
+  gulp.watch([path.babel], ['babel'])
+  gulp.watch([path.js], ['lint-js'])
+  gulp.watch([path.sass], ['sass'])
 })
 
 gulp.task('babel', () => {

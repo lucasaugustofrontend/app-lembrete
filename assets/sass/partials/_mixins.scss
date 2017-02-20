@@ -1,0 +1,42 @@
+@mixin clearfix($display, $hidden) {
+  box-sizing: border-box;
+  clear: both;
+  display: $display;
+  visibility: $hidden;
+}
+@mixin border($color, $style, $width, $radius) {
+  border: {
+    color: $color;
+    style: $style;
+    width: $width;
+    radius: $radius;
+  }
+}
+@mixin space($top, $bottom, $left: auto, $right: $left) {
+  margin: {
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+    top: $top;
+  }
+}
+@mixin boxShadow($blur, $spread, $color, $x, $y: $x) {
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+box-shadow: $x $y $blur $spread $color;
+}
+@mixin background($position, $size, $repeat) {
+  background: {
+    position: $position;
+    size: $size;
+    repeat: $repeat;
+  }
+}
+
+// PLACEHOLDERS
+%textHidden {
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  text-indent: -999999px;
+  overflow: hidden;
+}
