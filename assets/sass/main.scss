@@ -6,8 +6,9 @@
 
 * {
   box-sizing: border-box;
+  border: none;
   &::after, &::before {
-    @include clearfix(block, visibility);
+    @include clearfix(block, visible);
     content: '';
   }
 }
@@ -96,16 +97,11 @@ a {
   }
   .wrap_card {
     position: relative;
-    &_option {
+    &_options {
       position: absolute;
       @include space(-1rem, 0, 0);
       opacity: 0;
       transition: all .5s ease-in-out;
-    }
-    &:hover {
-      .wrap_card_option {
-        opacity: 1;
-      }
     }
   }
   .card_options {
@@ -121,7 +117,13 @@ a {
         }
       }
     }
-    
+    .card {
+      &:hover {
+        .wrap_card_options {
+          opacity: 1;
+        }
+      }
+    }   
 }
 
 [data-color="firstColor"] {
