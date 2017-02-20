@@ -31,25 +31,24 @@ gulp.task('server', () => {
   gulp.watch([path.babel], ['babel', reload])
   gulp.watch([path.js], ['lint-js', reload])
   gulp.watch([path.sass], ['sass', reload])
-  gulp.watch([path.css], ['cssmin', reload])
 })
 
 gulp.task('babel', () => {
-  return gulp.src(path.babel)
+  gulp.src(path.babel)
     .pipe(sourcemap.init())
     .pipe(babel())
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('assets/javascripts'))
 })
 gulp.task('sass', () => {
-  return gulp.src(path.sass)
+  gulp.src(path.sass)
     .pipe(sourcemap.init())
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('assets/stylesheets'))
 })
 gulp.task('cssmin', () => {
-  return gulp.src(path.css)
+  gulp.src(path.css)
     .pipe(sourcemap.init())
     .pipe(cssmin({compatibility: 'ie8'}))
     .pipe(sourcemap.write('.'))
@@ -57,7 +56,7 @@ gulp.task('cssmin', () => {
 })
 
 gulp.task('lint-js', () => {
-  return gulp.src(path.js)
+  gulp.src(path.js)
     .pipe(jshint())
     .pipe(jshint.reporter(stylish))
 })
@@ -68,4 +67,3 @@ gulp.task('gulpfile', () => {
 })
 
 gulp.task('default', () => {})
-
