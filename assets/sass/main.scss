@@ -16,6 +16,32 @@
 a {
   cursor: pointer;
 }
+.error {
+  background: lighten(colors(bg, primary), 20);
+  @include border(transparent, solid, .01rem, 0);
+  border: {
+    bottom: {
+      left: {
+        radius: .3rem;
+      }
+      right: {
+        radius: .3rem;
+      }
+    }
+  }
+  color: white;
+  display: block;
+  padding: {
+    bottom: 1rem;
+  }
+  line-height: 1.2;
+  margin: 0 auto;
+  width: 30%;
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+}
 
 .header {
   background: colors(bg, base);
@@ -122,6 +148,8 @@ a {
     @include background(center, 60%, no-repeat);
     @include border(rgba(0,0,0,.7), solid, .1rem, 50%);
     @extend %textHidden;
+    color: transparent;
+    cursor: pointer;
       a {
         color: transparent;
       }
@@ -135,6 +163,11 @@ a {
       &:hover {
         .wrap_card_options {
           opacity: 1;
+        }
+      }
+      &.col-lg-12 {
+        margin: {
+          top: 1.2rem;
         }
       }
     }   
@@ -166,16 +199,6 @@ a {
     background-image: url('../images/edit.svg');
   }
 }
-
-.footer {
-  background: colors(bg, base);
-  color: colors(text, base);
-  font: {
-    size: 2rem;
-  }
-  margin-top: 45.25vh;
-  padding: 3rem;
-  text: {
-    transform: uppercase;
-  }
+.card_content[contenteditable="true"] {
+  outline: .2rem dashed rgba(0, 0, 0, .5);
 }
