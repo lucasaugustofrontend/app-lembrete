@@ -10,35 +10,43 @@
 <body>
 	<div class="container-fluid">
 		<header class="header row">
-			<div class="col-lg-8">
+			<div class="col-xs-12 col-sm-8 col-lg-10">
 				<h1 class="header_title">App lembrete</h1>
 			</div>
-			<div class="header_options col-lg-4 row">
-				<div class="header_search col-lg-5">
-					<input type="text" name="search" placeholder="buscar lembrete">
-				</div>
-				<div class="col-lg-3 header_options_display center-lg">
+			<div class="header_options col-xs-12 col-sm-4 col-lg-2 row">
+				
+				<div class="col-xs-6 col-sm-8 col-lg-7 header_options_display center-lg">
 					<button type="button" class="header_button display">Linhas</button>
 				</div>
-				<div class="col-lg-2 header_options_help center-lg">
+				<div class="col-xs-6 col-sm-4 col-lg-4 header_options_help center-lg">
 					<button type="button" class="header_button">?</button>
 				</div>
 			</div>
 		</header>
 		<section class="newCards row">
-				<form action="" class="newCard col-lg-12">
-					<div class="col-lg-6 col-lg-offset-3">
-						<textarea name="newCard_content" cols="50" rows="10" class="newCard_content" placeholder="Digite aqui seu lembrete"></textarea>
+				<form action="" class="newCard col-xs-12 col-lg-12">
+					<div class="col-xs-12 col-lg-6 col-lg-offset-3 row">
+						<div class="col-xs-12 col-lg-12">
+							<textarea name="newCard_content" cols="50" rows="10" class="newCard_content" placeholder="Digite aqui seu lembrete"></textarea>
+						</div>
+						<div class="newCards_colors col-xs-12 col-sm-6 col-sm-offset-3 col-lg-6 col-lg-offset-3 row">
+							<h2 class="newCards_colors_title col-xs-12 center-xs">Escolha a cor do card: </h2>
+							<div class="colors" data-color="firstColor">Azul Céu</div>
+							<div class="colors" data-color="secondColor">Carmesim</div>
+							<div class="colors" data-color="thirdColor">Violeta</div>
+							<div class="colors" data-color="fourthColor">Verde Grama</div>
+						</div>
 					</div>
-					<div class="col-lg-6 col-lg-offset-3">
+					
+					<div class="col-xs-12 col-sm-4 col-sm-offset-4 col-lg-2 col-lg-offset-5">
 						<button type="submit" class="newCard_salve">Salvar</button>
 					</div>
 				</form>
 			</section>
-		<main class="container">
-			<section>
+		<main class="content">
+			<section class="row">
 				<ol class="wrap_card row">
-					<li class="card col-lg-3" data-color="firstColor">
+					<li class="card col-xs-12 col-sm-6 col-lg-3" data-color="firstColor">
 						<nav class="wrap_card_options">
 							<ul>
 								<li class="card_options card_delete card_setting">
@@ -65,7 +73,7 @@
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit optio quis, quibusdam eaque fugiat veritatis placeat nemo veniam, ea, eligendi magni illo esse adipisci in, dolore similique ut dolor deleniti!
 						</p>
 					</li>
-					<li class="card col-lg-3" data-color="secondColor">
+					<li class="card col-xs-12 col-sm-6 col-lg-3" data-color="secondColor">
 						<nav class="wrap_card_options">
 							<ul>
 								<li class="card_options card_delete card_setting">
@@ -74,10 +82,10 @@
 								<li class="card_options card_edit card_setting">
 									editar
 								</li>
-								<li class="card_options isActive" data-color="firstColor">
+								<li class="card_options" data-color="firstColor">
 									azul
 								</li>
-								<li class="card_options" data-color="secondColor">
+								<li class="card_options isActive" data-color="secondColor">
 									carmesim
 								</li>
 								<li class="card_options" data-color="thirdColor">
@@ -92,7 +100,7 @@
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit optio quis, quibusdam eaque fugiat veritatis placeat nemo veniam, ea, eligendi magni illo esse adipisci in, dolore similique ut dolor deleniti!
 						</p>
 					</li>
-					<li class="card col-lg-3" data-color="thirdColor">
+					<li class="card mobile col-xs-12 col-sm-6 col-lg-3" data-color="thirdColor">
 						<nav class="wrap_card_options">
 							<ul>
 								<li class="card_options card_delete card_setting">
@@ -101,13 +109,13 @@
 								<li class="card_options card_edit card_setting">
 									editar
 								</li>
-								<li class="card_options isActive" data-color="firstColor">
+								<li class="card_options" data-color="firstColor">
 									azul
 								</li>
 								<li class="card_options" data-color="secondColor">
 									carmesim
 								</li>
-								<li class="card_options" data-color="thirdColor">
+								<li class="card_options isActive" data-color="thirdColor">
 									violeta
 								</li>
 								<li class="card_options" data-color="fourthColor">
@@ -119,7 +127,7 @@
 							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit optio quis, quibusdam eaque fugiat veritatis placeat nemo veniam, ea, eligendi magni illo esse adipisci in, dolore similique ut dolor deleniti!
 						</p>
 					</li>
-					<li class="card col-lg-3" data-color="fourthColor">
+					<li class="card mobile col-xs-12 col-sm-6 col-lg-3" data-color="fourthColor">
 						<nav class="wrap_card_options">
 							<ul>
 								<li class="card_options card_delete card_setting">
@@ -128,7 +136,7 @@
 								<li class="card_options card_edit card_setting">
 									editar
 								</li>
-								<li class="card_options isActive" data-color="firstColor">
+								<li class="card_options" data-color="firstColor">
 									azul
 								</li>
 								<li class="card_options" data-color="secondColor">
@@ -137,7 +145,7 @@
 								<li class="card_options" data-color="thirdColor">
 									violeta
 								</li>
-								<li class="card_options" data-color="fourthColor">
+								<li class="card_options isActive" data-color="fourthColor">
 									verde
 								</li>
 							</ul>
@@ -149,6 +157,8 @@
 				</ol>
 			</section>
 		</main>
+
+<script src="assets/javascripts/template.js"></script>
 <script src="assets/javascripts/main.js"></script>
 </body>
 </html>

@@ -34,9 +34,15 @@ box-shadow: $x $y $blur $spread $color;
 
 // PLACEHOLDERS
 %textHidden {
+  color: transparent;
   display: inline-block;
   height: 2rem;
   width: 2rem;
   text-indent: -999999px;
   overflow: hidden;
+}
+%textUppercase {
+  text: {
+    transform: uppercase;
+  }
 }

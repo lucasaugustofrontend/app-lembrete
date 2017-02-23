@@ -35,11 +35,24 @@ $wrapCard.addEventListener('click', (e) => {
   }
 })
 
+// ativar cores para novos cards
+const $newCardColors = selector('.newCards_colors .colors', 'All')
+for (let i = 0; i < $newCardColors.length; i++) {
+  $newCardColors[i].addEventListener('click', (e) => {
+    const $this = e.target
+    if ($this.dataset.color) {
+      for (var pos = 0; pos < $newCardColors.length; pos++) {
+        $newCardColors[pos].classList.remove('isActive')
+      }
+    }
+    $this.classList.add('isActive')
+  })
+}
+
 // criação de novos lembretes
 const $newCardContent = selector('.newCard_content')
 const $newCardAction = selector('.newCard_salve')
 let $newCard = selector('.newCard')
-const $cardContent = selector('.card_content')
 
 $newCardAction.addEventListener('click', (e) => {
   e.preventDefault()
@@ -47,18 +60,18 @@ $newCardAction.addEventListener('click', (e) => {
     if (selector('.error') === null) {
       const $error = document.createElement('span')
       $error.classList.add('error')
-      $error.textContent = 'Por favor preencha o campo acima'
+      $error.textContent = 'Por favor preencha o campo lembrete!'
       $newCard.insertBefore($error, $newCardAction.parentNode)
     }
   }
   else {
-    const $card = selector('.card')
-    const $copyCard = $card.cloneNode(true)
-    $copyCard.querySelector('.card_content').textContent = $newCardContent.value
+    let $listCard = selector('.wrap_card')
+    const $cardColor = selector('.newCards_colors .colors.isActive')
+    const $cardNew = template($newCardContent.value, $cardColor.dataset.color) + $listCard.innerHTML
+    $listCard.innerHTML = $cardNew
 
-    $wrapCard.insertBefore($copyCard, $card)
+    // $wrapCard.insertBefore($copyCard, $card)
     $newCardContent.value = ''
-    $newCardContent.focus()
   }
 })
 
@@ -66,6 +79,13 @@ $newCardContent.addEventListener('input', () => {
   const $error = selector('.error')
   if ($error !== null) $error.remove()
 })
+const $cardColorClick = selector('.colors', 'All')
+for (let i = 0; i < $cardColorClick.length; i++) {
+  $cardColorClick[i].addEventListener('click', () => {
+    const $error = selector('.error')
+    if ($error !== null) $error.remove()
+  })
+}
 
 // transforma cards em linha e de linhas para blocos
 const $displayCard = selector('.display')
@@ -85,4 +105,10 @@ $displayCard.addEventListener('click', (e) => {
     }
   }
 })
+
+function returnColor(color) {
+  for (let i = 0; i < color.length; i++) {
+    console.log(color[i])
+  }
+}
 

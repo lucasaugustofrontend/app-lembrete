@@ -12,10 +12,6 @@
     content: '';
   }
 }
-
-a {
-  cursor: pointer;
-}
 .error {
   background: lighten(colors(bg, primary), 20);
   @include border(transparent, solid, .01rem, 0);
@@ -65,25 +61,12 @@ a {
       line-height: 1.5;
       width: 100%;
     }
-    &_help {
-      margin: {
-        left: .5rem;
+    @media(max-width: 667px) {
+      &_display, &_help {
+        display: none;
       }
     }
-  }
-  &_search {
-    padding: {
-      top: .2rem;
-    }
-    input {
-      @include border(transparent, solid, .01rem, .3rem);
-      height: 2rem;
-      width: 100%;
-      padding: {
-        left: .5rem;
-      }
-    }
-  }
+  }  
 }
 
 .newCards {
@@ -91,6 +74,57 @@ a {
   padding: {
     bottom: .5rem;
     top: .5rem;
+  }
+  &_colors {
+    .colors {
+      @media(min-width: 768px) {
+        &[data-color="firstColor"] {
+          margin: {
+            left: 5rem;
+          }
+        }
+      }
+      @media(min-width: 1280px) {
+        &[data-color="firstColor"] {
+          margin: {
+            left: 3rem;
+          }
+        }
+      }
+      @media(min-width: 1600px){
+        &[data-color="firstColor"] {
+          margin: {
+            left: 8.5rem;
+          }
+        }
+      }
+      
+      border: {
+        color: darken(colors(bg, base), 30);
+        style: solid;
+        width: .1rem;
+        radius: 50%;
+      }
+      cursor: pointer;
+      @extend %textHidden;
+      margin: {
+        left: .5rem;
+      }
+      height: 2rem;
+      width: 2rem;
+      &.isActive {
+        border: {
+          width: .2rem;
+        }
+      }
+    }
+    &_title {
+        color: colors(bg, second);
+        font: {
+          size: 1.2rem;
+        }
+        @extend %textUppercase;
+      }
   }
 }
 
@@ -101,7 +135,7 @@ a {
     }
     color: lighten(colors(text, dark), 30%);
     display: block;
-    height: 2.5rem;
+    height: 4rem;
     margin: 0 auto;
     padding: .3rem;
     width: 70%;
@@ -109,6 +143,9 @@ a {
     &:focus { 
       @include boxShadow(10px, 2px, lighten(colors(bg, base), 20%), 0);
       height: 7rem;
+    }
+    @media(max-width: 768px) {
+      width: 100%;
     }
   }
   &_salve {
@@ -124,11 +161,16 @@ a {
     text: {
       transform: uppercase;
     }
-    width: 15%;
+    width: 100%;
+    @media(min-width: 768px) {
+      margin: {
+        top: 1rem;
+      }
+    }
   }
 }
 
-.container {
+.content {
   margin: 0 auto;
   ol, ul {
     list: {
@@ -137,6 +179,10 @@ a {
   }
   .wrap_card {
     position: relative;
+      padding: {
+        left: 1.4rem;
+        right: 1.4rem;
+      }
     &_options {
       position: absolute;
       @include space(-1rem, 0, 0);
@@ -160,6 +206,11 @@ a {
       }
     }
     .card {
+      @media(max-width: 1280px) {
+          margin: {
+            top: 1.5rem;
+          }
+      }
       &:hover {
         .wrap_card_options {
           opacity: 1;

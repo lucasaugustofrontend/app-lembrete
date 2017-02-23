@@ -36,11 +36,24 @@ $wrapCard.addEventListener('click', function (e) {
   }
 });
 
+// ativar cores para novos cards
+var $newCardColors = selector('.newCards_colors .colors', 'All');
+for (var i = 0; i < $newCardColors.length; i++) {
+  $newCardColors[i].addEventListener('click', function (e) {
+    var $this = e.target;
+    if ($this.dataset.color) {
+      for (var pos = 0; pos < $newCardColors.length; pos++) {
+        $newCardColors[pos].classList.remove('isActive');
+      }
+    }
+    $this.classList.add('isActive');
+  });
+}
+
 // criação de novos lembretes
 var $newCardContent = selector('.newCard_content');
 var $newCardAction = selector('.newCard_salve');
 var $newCard = selector('.newCard');
-var $cardContent = selector('.card_content');
 
 $newCardAction.addEventListener('click', function (e) {
   e.preventDefault();
@@ -48,17 +61,17 @@ $newCardAction.addEventListener('click', function (e) {
     if (selector('.error') === null) {
       var $error = document.createElement('span');
       $error.classList.add('error');
-      $error.textContent = 'Por favor preencha o campo acima';
+      $error.textContent = 'Por favor preencha o campo lembrete!';
       $newCard.insertBefore($error, $newCardAction.parentNode);
     }
   } else {
-    var $card = selector('.card');
-    var $copyCard = $card.cloneNode(true);
-    $copyCard.querySelector('.card_content').textContent = $newCardContent.value;
+    var $listCard = selector('.wrap_card');
+    var $cardColor = selector('.newCards_colors .colors.isActive');
+    var $cardNew = template($newCardContent.value, $cardColor.dataset.color) + $listCard.innerHTML;
+    $listCard.innerHTML = $cardNew;
 
-    $wrapCard.insertBefore($copyCard, $card);
+    // $wrapCard.insertBefore($copyCard, $card)
     $newCardContent.value = '';
-    $newCardContent.focus();
   }
 });
 
@@ -66,6 +79,13 @@ $newCardContent.addEventListener('input', function () {
   var $error = selector('.error');
   if ($error !== null) $error.remove();
 });
+var $cardColorClick = selector('.colors', 'All');
+for (var _i = 0; _i < $cardColorClick.length; _i++) {
+  $cardColorClick[_i].addEventListener('click', function () {
+    var $error = selector('.error');
+    if ($error !== null) $error.remove();
+  });
+}
 
 // transforma cards em linha e de linhas para blocos
 var $displayCard = selector('.display');
@@ -84,4 +104,10 @@ $displayCard.addEventListener('click', function (e) {
     }
   }
 });
+
+function returnColor(color) {
+  for (var _i2 = 0; _i2 < color.length; _i2++) {
+    console.log(color[_i2]);
+  }
+}
 //# sourceMappingURL=main.js.map
